@@ -32,7 +32,6 @@
     "gulp-order": "^1.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-string-replace": "^1.1.2",
@@ -41,6 +40,12 @@
     "gulp-wp-pot": "^2.5.0",
     "gulp-zip": "^5.1.0",
     "lodash": "^4.17.21",
-    "merge-stream": "^2.0.0"
+    "merge-stream": "^2.0.0",
+    "plugin-error": "^1.0.1",
+    "replace-ext": "^2.0.0",
+    "sass": "^1.32.13",
+    "strip-ansi": "^7.0.0",
+    "through2": "^4.0.2",
+    "vinyl-sourcemaps-apply": "^0.2.1"
   }
 }
