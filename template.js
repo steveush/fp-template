@@ -71,9 +71,12 @@ const removePackage = (pkg, options) => {
 
 const createFiles = (pkg, options) => {
     return Promise.resolve().then(() => {
+        const ignore = ".gitkeep";
         const src = path.resolve(__dirname, "./files"),
             dest = path.dirname(options.__pkg),
-            files = glob.sync("**/*", {"cwd": src}),
+            files = glob.sync("**/*", {"cwd": src}).filter((fileName) => {
+                return !fileName.endsWith(ignore);
+            }),
             skipped = [], replaced = [], created = [];
 
         u.log("Checking files in " + c.magenta(dest) + "...");
