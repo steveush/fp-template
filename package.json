@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "description": "This package helps to get a basic WordPress plugin up and running.",
   "main": "index.js",
-  "type": "module",
   "bin": {
     "fp-template": "bin/fp-template.js"
   },
@@ -45,7 +44,7 @@
     "plugin-error": "^1.0.1",
     "replace-ext": "^2.0.0",
     "sass": "^1.32.13",
-    "strip-ansi": "^7.0.0",
+    "strip-ansi": "^6.0.0",
     "through2": "^4.0.2",
     "vinyl-sourcemaps-apply": "^0.2.1"
   }
