@@ -24,6 +24,7 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^1.0.2",
     "gulp-filter": "^7.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-line-ending-corrector": "^1.0.3",
@@ -40,12 +41,6 @@
     "gulp-wp-pot": "^2.5.0",
     "gulp-zip": "^5.1.0",
     "lodash": "^4.17.21",
-    "merge-stream": "^2.0.0",
-    "plugin-error": "^1.0.1",
-    "replace-ext": "^2.0.0",
-    "sass": "^1.32.13",
-    "strip-ansi": "^6.0.0",
-    "through2": "^4.0.2",
-    "vinyl-sourcemaps-apply": "^0.2.1"
+    "merge-stream": "^2.0.0"
   }
 }
