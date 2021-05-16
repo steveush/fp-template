@@ -71,7 +71,7 @@ const removePackage = (pkg, options) => {
 
 const createFiles = (pkg, options) => {
     return Promise.resolve().then(() => {
-        const src = path.resolve(__dirname, "../files"),
+        const src = path.resolve(__dirname, "./files"),
             dest = path.dirname(options.__pkg),
             files = glob.sync("**/*", {"cwd": src}),
             skipped = [], replaced = [], created = [];
@@ -147,7 +147,7 @@ const createFiles = (pkg, options) => {
 const removeFiles = (pkg, options) => {
     return Promise.resolve().then(() => {
         //remove the template files
-        const src = path.resolve(__dirname, "../files"),
+        const src = path.resolve(__dirname, "./files"),
             dest = path.dirname(options.__pkg),
             files = glob.sync("**/*", {"cwd": src,"nodir": true}),
             dirs = glob.sync("**/*/", {"cwd": src}),
@@ -202,7 +202,7 @@ const removeFiles = (pkg, options) => {
     });
 };
 
-const installDependencies = (pkg, options) => {
+const checkDependencies = (pkg, options) => {
     return Promise.resolve().then(() => {
         u.log("Checking dependencies in " + c.magenta(options.__pkg) + "...");
         if (!_.isPlainObject(pkg.devDependencies)) pkg.devDependencies = {};
@@ -211,47 +211,11 @@ const installDependencies = (pkg, options) => {
         });
         if (missingDependencies.length > 0){
             const command = "npm install --save-dev " + missingDependencies.join(" ");
-            const done = u.log.async("Running '" + c.cyan(command) + "'...");
-            return u.exec(command).then((result) => {
-                done();
-                const installed_msg = c.green("Installed " + c.magenta(missingDependencies.length) + " dependencies.");
-                if (options.verbose){
-                    console.log(result.stdout);
-                    u.log.output(installed_msg, "\n", missingDependencies);
-                } else {
-                    u.log.output(installed_msg);
-                }
-            }).finally(done);
+            u.log.output(c.red("Missing dependencies! Run '" + command + "' before you attempt to build!"));
         } else {
             u.log.output(c.green("All dependencies exist!"));
         }
     });
-};
-
-const uninstallDependencies = (pkg, options) => {
-    u.log("Checking dependencies in " + c.magenta(options.__pkg) + "...");
-    // remove any devDependencies we installed
-    if (_.isObject(pkg.devDependencies)){
-        const hasDependencies = options.devDependencies.filter((dep) => {
-            return pkg.devDependencies.hasOwnProperty(dep);
-        });
-        if (hasDependencies.length){
-            const command = "npm uninstall --save-dev " + hasDependencies.join(" ");
-            const done = u.log.async("Running '" + c.cyan(command) + "'...");
-            return u.exec(command).then((result) => {
-                done();
-                const uninstalled_msg = c.green("Uninstalled " + c.magenta(hasDependencies.length) + " dependencies.");
-                if (options.verbose){
-                    console.log(result.stdout);
-                    u.log.output(uninstalled_msg, hasDependencies);
-                } else {
-                    u.log.output(uninstalled_msg);
-                }
-            }).finally(done);
-        } else {
-            u.log.output(c.green("All dependencies removed!"));
-        }
-    }
 };
 
 module.exports = {
@@ -261,6 +225,5 @@ module.exports = {
     removePackage,
     createFiles,
     removeFiles,
-    installDependencies,
-    uninstallDependencies
+    checkDependencies
 };
