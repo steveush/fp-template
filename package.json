@@ -14,9 +14,7 @@
   "bugs": "https://fooplugins.com",
   "license": "GPL-2.0-or-later",
   "peerDependencies": {
-    "@wordpress/scripts": "16.x",
-    "gulp": "4.x",
-    "node-sass": "6.x"
+    "gulp": "4.x"
   },
   "dependencies": {
     "chalk": "^2.4.2",
