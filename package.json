@@ -1,0 +1,47 @@
+{
+  "name": "fp-template",
+  "title": "FooPlugins - WordPress Template Utility",
+  "version": "0.0.1",
+  "description": "This package helps to get a basic WordPress plugin up and running.",
+  "main": "index.js",
+  "bin": {
+    "fp-template": "bin/fp-template.js"
+  },
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
+  "author": "FooPlugins <info@fooplugins.com>",
+  "bugs": "https://fooplugins.com",
+  "license": "GPL-2.0-or-later",
+  "peerDependencies": {
+    "@wordpress/scripts": "16.x",
+    "gulp": "4.x"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "del": "^6.0.0",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.1.7",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^7.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-line-ending-corrector": "^1.0.3",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-notify": "^4.0.0",
+    "gulp-order": "^1.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sort": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-string-replace": "^1.1.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "gulp-wp-pot": "^2.5.0",
+    "gulp-zip": "^5.1.0",
+    "lodash": "^4.17.21",
+    "merge-stream": "^2.0.0"
+  }
+}
