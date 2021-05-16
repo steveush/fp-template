@@ -8,7 +8,7 @@
     "fp-template": "bin/fp-template.js"
   },
   "scripts": {
-    "postinstall": "node postinstall.js"
+    "prepare": "node prepare.js"
   },
   "author": "FooPlugins <info@fooplugins.com>",
   "bugs": "https://fooplugins.com",
