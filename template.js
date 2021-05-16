@@ -151,7 +151,7 @@ const removeFiles = (pkg, options) => {
             dest = path.dirname(options.__pkg),
             files = glob.sync("**/*", {"cwd": src,"nodir": true}),
             dirs = glob.sync("**/*/", {"cwd": src}),
-            skipped = {}, removed = [];
+            skipped = [], removed = [];
 
         u.log("Checking files in " + c.magenta(dest) + "...");
 

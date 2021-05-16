@@ -13,14 +13,14 @@
   "author": "FooPlugins <info@fooplugins.com>",
   "bugs": "https://fooplugins.com",
   "license": "GPL-2.0-or-later",
-  "peerDependencies": {
-    "gulp": "4.x"
-  },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "@babel/core": "^7.14.2",
+    "@wordpress/browserslist-config": "^4.0.0",
+    "chalk": "^4.1.1",
     "del": "^6.0.0",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
@@ -28,8 +28,6 @@
     "gulp-filter": "^7.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-line-ending-corrector": "^1.0.3",
-    "gulp-merge-media-queries": "^0.2.1",
-    "gulp-notify": "^4.0.0",
     "gulp-order": "^1.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",

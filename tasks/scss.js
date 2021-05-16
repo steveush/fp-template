@@ -8,7 +8,6 @@ const sourcemaps = require( 'gulp-sourcemaps' );
 const sass = require( 'gulp-dart-sass' );
 const uglifycss = require( 'gulp-uglifycss' );
 const autoprefixer = require( 'gulp-autoprefixer' );
-const mmq = require( 'gulp-merge-media-queries' );
 
 module.exports = (gulp, name, config) => {
     return gulp.task(name, (done) => {
@@ -31,7 +30,6 @@ module.exports = (gulp, name, config) => {
                     .pipe( lineEndingCorrector() ) // Consistent Line Endings for non UNIX systems.
                     .pipe( gulp.dest( file.dir ) )
                     .pipe( filter( '**/*.css' ) ) // Filtering stream to only css files.
-                    .pipe( mmq({ log: false }) ) // Merge Media Queries only for .min.css version.
                     .pipe( rename({ basename: basename, suffix: ".min" }) )
                     .pipe( uglifycss({ maxLineLen: 10 }) )
                     .pipe( lineEndingCorrector() ) // Consistent Line Endings for non UNIX systems.
