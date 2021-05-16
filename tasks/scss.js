@@ -15,7 +15,7 @@ module.exports = (gulp, name, config) => {
         return u.fileTask(gulp, name, config, {
             allowEmpty: true,
             sass: {
-                outputStyle: "compact",
+                outputStyle: "compressed",
                 precision: 10
             },
             process: (src, file, opt) => {
